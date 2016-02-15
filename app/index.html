@@ -29,25 +29,25 @@
 
                 <!-- ng-init will evaluate the expression within the current scope
                 so this will initialise the displayed tab to panel 1 -->
-                <section ng-init="tab = 1">
+                <section ng-controller="PanelController as panel">
                     <ul class="nav nav-pills">
                         <!-- ng-class will set the specified class (in this case 'active') if the
                         expression after the colon is true -->
-                        <li ng-class="{ active:tab === 1}">
+                        <li ng-class="{ active:panel.tab === 1}">
                             <!-- ng-click will evaluate the expression when the element is clicked
                             so in this case it will set the value of a property called 'tab' -->
-                            <a href ng-click="tab = 1">Person</a>
+                            <a href ng-click="panel.tab = 1">Person</a>
                         </li>
-                        <li ng-class="{ active:tab === 2}">
-                            <a href ng-click="tab = 2">Favourite Food</a>
+                        <li ng-class="{ active:panel.tab === 2}">
+                            <a href ng-click="panel.tab = 2">Favourite Food</a>
                         </li>
-                        <li ng-class="{ active:tab === 3}">
-                            <a href ng-click="tab = 3">Food Diary</a>
+                        <li ng-class="{ active:panel.tab === 3}">
+                            <a href ng-click="panel.tab = 3">Food Diary</a>
                         </li>
                     </ul>
 
                     <!-- create a different panel to show when the 'tab' property matches -->
-                    <div class="panel" ng-show="tab === 1">
+                    <div class="panel" ng-show="panel.tab === 1">
                         <div class="row">
                             <div class="col-xs-3 col-sm-4">
                                 <img ng-src="{{user.img.thumb}}"/>
@@ -62,10 +62,10 @@
 
                         </div>
                     </div>
-                    <div class="panel" ng-show="tab === 2">
+                    <div class="panel" ng-show="panel.tab === 2">
                         Favourite Food
                     </div>
-                    <div class="panel" ng-show="tab === 3">
+                    <div class="panel" ng-show="panel.tab === 3">
                         Food Diary
                     </div>
                 </section>

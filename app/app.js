@@ -15,6 +15,11 @@
         this.lastSavedAt = new Date().getTime();
     });
 
+    app.controller("PanelController", function() {
+
+        this.tab = 1;
+    });
+
     var aBunchOfPeople = [
         {
             name:       "Mr Bob",
