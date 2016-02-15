@@ -4,18 +4,18 @@
     var app = angular.module('myApp', []);
 
     //create a controller inside the module 'app'
-    app.controller("UserController", function ()
+    app.controller("PersonController", function ()
     {
 
         //code in this anonymous function gets called when the controller is executed
 
         //create a field inside the controller referencing the users array
-        this.users = theUsers;
+        this.people = aBunchOfPeople;
         this.wallet = 1000000;
         this.lastSavedAt = new Date().getTime();
     });
 
-    var theUsers = [
+    var aBunchOfPeople = [
         {
             name:       "Mr Bob",
             age:        35,

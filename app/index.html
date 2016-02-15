@@ -16,16 +16,16 @@
         <h1>{{"Feed the grumpy people" | uppercase}}</h1>
 
         <!-- Scope of the controller is only within the div -->
-        <div class="container-fluid" ng-controller="UserController as userControl">
+        <div class="container-fluid" ng-controller="PersonController as personControl">
 
             <div>
-                Last saved at: {{userControl.lastSavedAt | date:'dd/MM/yyyy HH:mm:ss'}}<br/>
-                Money remaining: {{userControl.wallet | currency}}
+                Last saved at: {{personControl.lastSavedAt | date:'dd/MM/yyyy HH:mm:ss'}}<br/>
+                Money remaining: {{personControl.wallet | currency}}
             </div>
             <br/>
 
             <!-- this div will repeat for each element in the array -->
-            <div ng-repeat="user in userControl.users | orderBy:'age'">
+            <div ng-repeat="user in personControl.people | orderBy:'age'">
 
                 <!-- ng-init will evaluate the expression within the current scope
                 so this will initialise the displayed tab to panel 1 -->
