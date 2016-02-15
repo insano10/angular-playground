@@ -35,14 +35,14 @@
                         expression after the colon is true -->
                         <li ng-class="{ active:panel.tab === 1}">
                             <!-- ng-click will evaluate the expression when the element is clicked
-                            so in this case it will set the value of a property called 'tab' -->
-                            <a href ng-click="panel.tab = 1">Person</a>
+                            so in this case it will call the function selectTab with a parameter of 1 -->
+                            <a href ng-click="panel.selectTab(1)">Person</a>
                         </li>
                         <li ng-class="{ active:panel.tab === 2}">
-                            <a href ng-click="panel.tab = 2">Favourite Food</a>
+                            <a href ng-click="panel.selectTab(2)">Favourite Food</a>
                         </li>
                         <li ng-class="{ active:panel.tab === 3}">
-                            <a href ng-click="panel.tab = 3">Food Diary</a>
+                            <a href ng-click="panel.selectTab(3)">Food Diary</a>
                         </li>
                     </ul>
 
