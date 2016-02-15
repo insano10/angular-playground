@@ -3,14 +3,20 @@
 <html ng-app="myApp">
 
     <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
+        <script src="app.js"></script>
     </head>
 
     <body>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
-    <script src="app.js"></script>
+        <!-- Scope of the controller is only within the div -->
+        <div ng-controller="UserController as users">
+            <h1> {{users.user.name}}</h1>
+            <h2> {{users.user.age}}</h2>
+            <p> {{users.user.motto}}</p>
+        </div>
 
-        <p> I am {{4 + 6}}</p>
+
     </body>
 
 </html>
