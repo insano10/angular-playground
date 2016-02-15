@@ -64,6 +64,24 @@
                         Favourite Food
                     </div>
                     <div class="panel" ng-show="panel.isSelected(3)">
+
+                        <br/>
+                        <form class="form-horizontal" name="diaryForm">
+                            <fieldset class="form-group">
+                                <label for="diaryFoodInput" class="col-xs-2 control-label">Food:</label>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" id="diaryFoodInput" placeholder="Enter food eaten..."/>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form-group">
+                                <label for="diaryCommentInput" class="col-xs-2 control-label">Comment:</label>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" id="diaryCommentInput" placeholder="Enter comments..."/>
+                                </div>
+                            </fieldset>
+                            <input type="submit" value="Submit"/>
+                        </form>
+
                         <!-- show the latest 3 entries ordered by time descending -->
                         <div class="container" ng-repeat="entry in user.diary | orderBy:'-time' | limitTo:'3'">
                             <hr/>
