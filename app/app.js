@@ -15,9 +15,10 @@
         this.lastSavedAt = new Date().getTime();
     });
 
-    app.controller("PanelController", function() {
+    app.controller("PanelController", function($scope) {
 
         this.tab = 1;
+        this.feelings = ["happy", "sad", "excited"];
 
         this.selectTab = function(setTab){
             this.tab = setTab;
