@@ -21,7 +21,6 @@
             age:        35,
             motto:      "When the world gives you lemons, throw them at people",
             isHungry:   false,
-            isSleeping: false,
             img: {
                 full: "resources/images/grumpy_man.jpg",
                 thumb: "resources/images/grumpy_man_thumb.jpg"
@@ -32,7 +31,6 @@
             age:        57,
             motto:      "You can never have enough cats",
             isHungry:   true,
-            isSleeping: false,
             img: {
                 full: "resources/images/cat_lady.png",
                 thumb: "resources/images/cat_lady_thumb.png"
@@ -43,7 +41,6 @@
             age:        22,
             motto:      "If you get in my way, I will destroy you",
             isHungry:   false,
-            isSleeping: false,
             img: {
                 full: "resources/images/daria.jpg",
                 thumb: "resources/images/daria_thumb.jpg"
