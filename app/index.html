@@ -64,7 +64,23 @@
                         Favourite Food
                     </div>
                     <div class="panel" ng-show="panel.isSelected(3)">
-                        Food Diary
+                        <!-- show the latest 3 entries ordered by time descending -->
+                        <div class="container" ng-repeat="entry in user.diary | orderBy:'-time' | limitTo:'3'">
+                            <hr/>
+                            <div class="row">
+                                <div class="col-xs-2">Time:</div>
+                                <div class="col-xs-10">{{entry.time | date:'dd/MM/yyyy HH:mm:ss'}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-2">Food:</div>
+                                <div class="col-xs-10">{{entry.name}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-2">Comment:</div>
+                                <div class="col-xs-10">{{entry.comment}}</div>
+                            </div>
+                            <hr/>
+                        </div>
                     </div>
                 </section>
 

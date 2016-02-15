@@ -37,7 +37,29 @@
             img: {
                 full: "resources/images/grumpy_man.jpg",
                 thumb: "resources/images/grumpy_man_thumb.jpg"
-            }
+            },
+            diary: [
+                {
+                    name: "lemon",
+                    time: 10000,
+                    comment: "**screws up face**"
+                },
+                {
+                    name: "lemon",
+                    time: 20000,
+                    comment: "**screws up face**"
+                },
+                {
+                    name: "lemon",
+                    time: 30000,
+                    comment: "**screws up face**"
+                },
+                {
+                    name: "lemon",
+                    time: 40000,
+                    comment: "**throws lemon at person**"
+                }
+            ]
         },
         {
             name:       "Mrs Jones",
@@ -47,7 +69,19 @@
             img: {
                 full: "resources/images/cat_lady.png",
                 thumb: "resources/images/cat_lady_thumb.png"
-            }
+            },
+            diary: [
+                {
+                    name: "carrots and hummus",
+                    time: 10000,
+                    comment: "Oh no thank you, Tiddles simply hates hummus"
+                },
+                {
+                    name: "mackerel",
+                    time: 20000,
+                    comment: "om nom nom"
+                }
+            ]
         },
         {
             name:       "Miss Kitty",
@@ -57,7 +91,8 @@
             img: {
                 full: "resources/images/daria.jpg",
                 thumb: "resources/images/daria_thumb.jpg"
-            }
+            },
+            diary: []
         }
     ]
 })();
