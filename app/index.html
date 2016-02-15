@@ -27,8 +27,6 @@
             <!-- this div will repeat for each element in the array -->
             <div ng-repeat="user in personControl.people | orderBy:'age'">
 
-                <!-- ng-init will evaluate the expression within the current scope
-                so this will initialise the displayed tab to panel 1 -->
                 <section ng-controller="PanelController as panel">
                     <ul class="nav nav-pills">
                         <!-- ng-class will set the specified class (in this case 'active') if the
@@ -46,7 +44,7 @@
                         </li>
                     </ul>
 
-                    <!-- create a different panel to show when isSelected(x) returns true -->
+                    <!-- create different panels to show when isSelected(x) returns true -->
                     <div class="panel" ng-show="panel.isSelected(1)">
                         <div class="row">
                             <div class="col-xs-3 col-sm-4">
