@@ -66,17 +66,24 @@
                     <div class="panel" ng-show="panel.isSelected(3)">
 
                         <br/>
+                        <blockquote>
+                            Food: {{entry.food}}<br/>
+                            Comment: {{entry.comment}}
+                        </blockquote>
+
                         <form class="form-horizontal" name="diaryForm">
                             <fieldset class="form-group">
                                 <label for="diaryFoodInput" class="col-xs-2 control-label">Food:</label>
                                 <div class="col-xs-6">
-                                    <input type="text" class="form-control" id="diaryFoodInput" placeholder="Enter food eaten..."/>
+                                    <input type="text" class="form-control" id="diaryFoodInput"  ng-model="entry.food"
+                                           placeholder="Enter food eaten..."/>
                                 </div>
                             </fieldset>
                             <fieldset class="form-group">
                                 <label for="diaryCommentInput" class="col-xs-2 control-label">Comment:</label>
                                 <div class="col-xs-6">
-                                    <input type="text" class="form-control" id="diaryCommentInput" placeholder="Enter comments..."/>
+                                    <input type="text" class="form-control" id="diaryCommentInput" ng-model="entry.comment"
+                                           placeholder="Enter comments..."/>
                                 </div>
                             </fieldset>
                             <input type="submit" value="Submit"/>
