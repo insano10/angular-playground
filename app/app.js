@@ -42,21 +42,25 @@
                 {
                     name: "lemon",
                     time: 10000,
+                    portionSize: 'Small',
                     comment: "**screws up face**"
                 },
                 {
                     name: "lemon",
                     time: 20000,
+                    portionSize: 'Small',
                     comment: "**screws up face**"
                 },
                 {
                     name: "lemon",
                     time: 30000,
+                    portionSize: 'Small',
                     comment: "**screws up face**"
                 },
                 {
                     name: "lemon",
                     time: 40000,
+                    portionSize: 'Medium',
                     comment: "**throws lemon at person**"
                 }
             ]
@@ -74,11 +78,13 @@
                 {
                     name: "carrots and hummus",
                     time: 10000,
+                    portionSize: 'Small',
                     comment: "Oh no thank you, Tiddles simply hates hummus"
                 },
                 {
                     name: "mackerel",
                     time: 20000,
+                    portionSize: 'Large',
                     comment: "om nom nom"
                 }
             ]

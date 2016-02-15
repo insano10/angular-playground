@@ -67,22 +67,30 @@
 
                         <br/>
                         <blockquote>
-                            Food: {{entry.food}}<br/>
-                            Comment: {{entry.comment}}
+                            Food: {{newEntry.portionSize}} {{newEntry.food}}<br/>
+                            Comment: {{newEntry.comment}}
                         </blockquote>
 
                         <form class="form-horizontal" name="diaryForm">
                             <fieldset class="form-group">
                                 <label for="diaryFoodInput" class="col-xs-2 control-label">Food:</label>
                                 <div class="col-xs-6">
-                                    <input type="text" class="form-control" id="diaryFoodInput"  ng-model="entry.food"
+                                    <input type="text" class="form-control" id="diaryFoodInput"  ng-model="newEntry.food"
                                            placeholder="Enter food eaten..."/>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form-group">
+                                <label class="col-xs-2 control-label">Size:</label>
+                                <div class="col-xs-6">
+                                    <input type="radio" ng-model="newEntry.portionSize" value="Small"/>Small
+                                    <input type="radio" ng-model="newEntry.portionSize" value="Medium"/>Medium
+                                    <input type="radio" ng-model="newEntry.portionSize" value="Large"/>Large
                                 </div>
                             </fieldset>
                             <fieldset class="form-group">
                                 <label for="diaryCommentInput" class="col-xs-2 control-label">Comment:</label>
                                 <div class="col-xs-6">
-                                    <input type="text" class="form-control" id="diaryCommentInput" ng-model="entry.comment"
+                                    <input type="text" class="form-control" id="diaryCommentInput" ng-model="newEntry.comment"
                                            placeholder="Enter comments..."/>
                                 </div>
                             </fieldset>
