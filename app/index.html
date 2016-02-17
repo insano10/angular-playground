@@ -16,36 +16,36 @@
         <h1>{{"Feed the grumpy people" | uppercase}}</h1>
 
         <!-- Scope of the controller is only within the div -->
-        <div class="container-fluid" ng-controller="PersonController as personControl">
+        <div class="container-fluid" ng-controller="PersonController as personCtrl">
 
             <div>
-                Last saved at: {{personControl.lastSavedAt | date:'dd/MM/yyyy HH:mm:ss'}}<br/>
-                Money remaining: {{personControl.wallet | currency}}
+                Last saved at: {{personCtrl.lastSavedAt | date:'dd/MM/yyyy HH:mm:ss'}}<br/>
+                Money remaining: {{personCtrl.wallet | currency}}
             </div>
             <br/>
 
             <!-- this div will repeat for each element in the array -->
-            <div ng-repeat="user in personControl.people | orderBy:'age'">
+            <div ng-repeat="user in personCtrl.people | orderBy:'age'">
 
-                <section ng-controller="PanelController as panel">
+                <section ng-controller="PanelController as panelCtrl">
                     <ul class="nav nav-pills">
                         <!-- ng-class will set the specified class (in this case 'active') if the
                         expression after the colon is true -->
-                        <li ng-class="{ active:panel.isSelected(1)}">
+                        <li ng-class="{ active:panelCtrl.isSelected(1)}">
                             <!-- ng-click will evaluate the expression when the element is clicked
                             so in this case it will call the function selectTab with a parameter of 1 -->
-                            <a href ng-click="panel.selectTab(1)">Person</a>
+                            <a href ng-click="panelCtrl.selectTab(1)">Person</a>
                         </li>
-                        <li ng-class="{ active:panel.isSelected(2)}">
-                            <a href ng-click="panel.selectTab(2)">Favourite Food</a>
+                        <li ng-class="{ active:panelCtrl.isSelected(2)}">
+                            <a href ng-click="panelCtrl.selectTab(2)">Favourite Food</a>
                         </li>
-                        <li ng-class="{ active:panel.isSelected(3)}">
-                            <a href ng-click="panel.selectTab(3)">Food Diary</a>
+                        <li ng-class="{ active:panelCtrl.isSelected(3)}">
+                            <a href ng-click="panelCtrl.selectTab(3)">Food Diary</a>
                         </li>
                     </ul>
 
                     <!-- create different panels to show when isSelected(x) returns true -->
-                    <div class="panel" ng-show="panel.isSelected(1)">
+                    <div class="panel" ng-show="panelCtrl.isSelected(1)">
                         <div class="row">
                             <div class="col-xs-3 col-sm-4">
                                 <img ng-src="{{user.img.thumb}}"/>
@@ -60,39 +60,39 @@
 
                         </div>
                     </div>
-                    <div class="panel" ng-show="panel.isSelected(2)">
+                    <div class="panel" ng-show="panelCtrl.isSelected(2)">
                         Favourite Food
                     </div>
-                    <div class="panel" ng-show="panel.isSelected(3)">
+                    <div class="panel" ng-show="panelCtrl.isSelected(3)">
 
                         <br/>
-                        <form class="form-horizontal" name="diaryForm" ng-controller="FoodDiaryController as diary">
+                        <form class="form-horizontal" name="diaryForm" ng-controller="FoodDiaryController as diaryCtrl">
                             Preview diary entry:
                             <blockquote>
-                                Food: {{diary.newEntry.portionSize}} {{diary.newEntry.food}}<br/>
-                                Comment: {{diary.newEntry.comment}}<br/>
-                                And I feel {{diary.newEntry.feeling}}
+                                Food: {{diaryCtrl.newEntry.portionSize}} {{diaryCtrl.newEntry.food}}<br/>
+                                Comment: {{diaryCtrl.newEntry.comment}}<br/>
+                                And I feel {{diaryCtrl.newEntry.feeling}}
                             </blockquote>
 
                             <fieldset class="form-group">
                                 <label for="diaryFoodInput" class="col-xs-3 control-label">Food:</label>
                                 <div class="col-xs-6">
-                                    <input type="text" class="form-control" id="diaryFoodInput"  ng-model="diary.newEntry.food"
+                                    <input type="text" class="form-control" id="diaryFoodInput"  ng-model="diaryCtrl.newEntry.food"
                                            placeholder="Enter food eaten..."/>
                                 </div>
                             </fieldset>
                             <fieldset class="form-group">
                                 <label class="col-xs-3 control-label">Size:</label>
                                 <div class="col-xs-6">
-                                    <input type="radio" ng-model="diary.newEntry.portionSize" value="Small"/>Small
-                                    <input type="radio" ng-model="diary.newEntry.portionSize" value="Medium"/>Medium
-                                    <input type="radio" ng-model="diary.newEntry.portionSize" value="Large"/>Large
+                                    <input type="radio" ng-model="diaryCtrl.newEntry.portionSize" value="Small"/>Small
+                                    <input type="radio" ng-model="diaryCtrl.newEntry.portionSize" value="Medium"/>Medium
+                                    <input type="radio" ng-model="diaryCtrl.newEntry.portionSize" value="Large"/>Large
                                 </div>
                             </fieldset>
                             <fieldset class="form-group">
                                 <label for="diaryCommentInput" class="col-xs-3 control-label">Comment:</label>
                                 <div class="col-xs-6">
-                                    <input type="text" class="form-control" id="diaryCommentInput" ng-model="diary.newEntry.comment"
+                                    <input type="text" class="form-control" id="diaryCommentInput" ng-model="diaryCtrl.newEntry.comment"
                                            placeholder="Enter comments..."/>
                                 </div>
                             </fieldset>
@@ -100,14 +100,14 @@
                                 <label for="diaryFeelingInput" class="col-xs-3 control-label">How are you feeling:</label>
                                 <div class="col-xs-6">
                                     <!-- Note: it seems you need an ng-model if you want to use ng-options -->
-                                    <select id="diaryFeelingInput" ng-model="diary.newEntry.feeling" ng-options="feeling for feeling in panel.feelings"></select>
+                                    <select id="diaryFeelingInput" ng-model="diaryCtrl.newEntry.feeling" ng-options="feeling for feeling in panelCtrl.feelings"></select>
                                 </div>
                             </fieldset>
                             <input type="submit" value="Submit"/>
                         </form>
 
                         <!-- show the latest 3 entries ordered by time descending -->
-                        <div class="container" ng-repeat="entry in user.diary | orderBy:'-time' | limitTo:'3'">
+                        <div class="container" ng-repeat="entry in user.diaryCtrl | orderBy:'-time' | limitTo:'3'">
                             <hr/>
                             <div class="row">
                                 <div class="col-xs-2">Time:</div>
