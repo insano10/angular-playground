@@ -6,13 +6,10 @@
     //create a controller inside the module 'app'
     app.controller("PersonController", function ()
     {
-
         //code in this anonymous function gets called when the controller is executed
 
         //create a field inside the controller referencing the users array
         this.people = aBunchOfPeople;
-        this.wallet = 1000000;
-        this.lastSavedAt = Date.now();
     });
 
     app.controller("PanelController", function ($scope)
@@ -62,7 +59,12 @@
 
         return {
             restrict: 'E', //this directive works on elements (A for attributes)
-            templateUrl: 'player-status.html' //url of the html template
+            templateUrl: 'player-status.html', //url of the html template
+            controller: function() {            //define a controller scoped within this directive
+                this.wallet = 1000000;
+                this.lastSavedAt = Date.now();
+            },
+            controllerAs: 'playerCtrl'      //the alias for the controller
         };
     });
 
