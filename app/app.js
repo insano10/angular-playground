@@ -29,6 +29,11 @@
         };
     });
 
+    app.controller("FoodDiaryController", function(){
+
+        this.newEntry = {};
+    });
+
     var aBunchOfPeople = [
         {
             name:       "Mr Bob",

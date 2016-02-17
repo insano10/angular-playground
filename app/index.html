@@ -66,32 +66,33 @@
                     <div class="panel" ng-show="panel.isSelected(3)">
 
                         <br/>
-                        <blockquote>
-                            Food: {{newEntry.portionSize}} {{newEntry.food}}<br/>
-                            Comment: {{newEntry.comment}}<br/>
-                            And I feel {{newEntry.feeling.name}}
-                        </blockquote>
+                        <form class="form-horizontal" name="diaryForm" ng-controller="FoodDiaryController as diary">
+                            Preview diary entry:
+                            <blockquote>
+                                Food: {{diary.newEntry.portionSize}} {{diary.newEntry.food}}<br/>
+                                Comment: {{diary.newEntry.comment}}<br/>
+                                And I feel {{diary.newEntry.feeling}}
+                            </blockquote>
 
-                        <form class="form-horizontal" name="diaryForm">
                             <fieldset class="form-group">
                                 <label for="diaryFoodInput" class="col-xs-3 control-label">Food:</label>
                                 <div class="col-xs-6">
-                                    <input type="text" class="form-control" id="diaryFoodInput"  ng-model="newEntry.food"
+                                    <input type="text" class="form-control" id="diaryFoodInput"  ng-model="diary.newEntry.food"
                                            placeholder="Enter food eaten..."/>
                                 </div>
                             </fieldset>
                             <fieldset class="form-group">
                                 <label class="col-xs-3 control-label">Size:</label>
                                 <div class="col-xs-6">
-                                    <input type="radio" ng-model="newEntry.portionSize" value="Small"/>Small
-                                    <input type="radio" ng-model="newEntry.portionSize" value="Medium"/>Medium
-                                    <input type="radio" ng-model="newEntry.portionSize" value="Large"/>Large
+                                    <input type="radio" ng-model="diary.newEntry.portionSize" value="Small"/>Small
+                                    <input type="radio" ng-model="diary.newEntry.portionSize" value="Medium"/>Medium
+                                    <input type="radio" ng-model="diary.newEntry.portionSize" value="Large"/>Large
                                 </div>
                             </fieldset>
                             <fieldset class="form-group">
                                 <label for="diaryCommentInput" class="col-xs-3 control-label">Comment:</label>
                                 <div class="col-xs-6">
-                                    <input type="text" class="form-control" id="diaryCommentInput" ng-model="newEntry.comment"
+                                    <input type="text" class="form-control" id="diaryCommentInput" ng-model="diary.newEntry.comment"
                                            placeholder="Enter comments..."/>
                                 </div>
                             </fieldset>
@@ -99,7 +100,7 @@
                                 <label for="diaryFeelingInput" class="col-xs-3 control-label">How are you feeling:</label>
                                 <div class="col-xs-6">
                                     <!-- Note: it seems you need an ng-model if you want to use ng-options -->
-                                    <select id="diaryFeelingInput" ng-model="newEntry.feeling" ng-options="feeling for feeling in panel.feelings"></select>
+                                    <select id="diaryFeelingInput" ng-model="diary.newEntry.feeling" ng-options="feeling for feeling in panel.feelings"></select>
                                 </div>
                             </fieldset>
                             <input type="submit" value="Submit"/>
