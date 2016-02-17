@@ -12,23 +12,6 @@
         this.people = aBunchOfPeople;
     });
 
-    app.controller("PanelController", function ($scope)
-    {
-
-        this.tab = 1;
-        this.feelings = ["happy", "sad", "excited"];
-
-        this.selectTab = function (setTab)
-        {
-            this.tab = setTab;
-        };
-
-        this.isSelected = function (checkTab)
-        {
-            return this.tab === checkTab;
-        };
-    });
-
     app.controller("FoodDiaryController", function ()
     {
 
@@ -55,16 +38,42 @@
     });
 
     // define a custom directive that translates to <player-status> in html
-    app.directive("playerStatus", function() {
+    app.directive("playerStatus", function ()
+    {
 
         return {
-            restrict: 'E', //this directive works on elements (A for attributes)
-            templateUrl: 'player-status.html', //url of the html template
-            controller: function() {            //define a controller scoped within this directive
-                this.wallet = 1000000;
-                this.lastSavedAt = Date.now();
-            },
+            restrict:     'E', //this directive works on elements (A for attributes)
+            templateUrl:  'player-status.html', //url of the html template
+            controller:   function ()
+                          {            //define a controller scoped within this directive
+                              this.wallet = 1000000;
+                              this.lastSavedAt = Date.now();
+                          },
             controllerAs: 'playerCtrl'      //the alias for the controller
+        };
+    });
+
+    app.directive("personView", function ()
+    {
+        return {
+            restrict:     'E',
+            templateUrl:  'person-view.html',
+            controller:   function ()
+                          {
+                              this.tab = 1;
+                              this.feelings = ["happy", "sad", "excited"];
+
+                              this.selectTab = function (setTab)
+                              {
+                                  this.tab = setTab;
+                              };
+
+                              this.isSelected = function (checkTab)
+                              {
+                                  return this.tab === checkTab;
+                              };
+                          },
+            controllerAs: 'panelCtrl'
         };
     });
 
