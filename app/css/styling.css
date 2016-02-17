@@ -1,0 +1,9 @@
+/* any input that has been edited by the user (dirty) but is not yet valid */
+.ng-invalid.ng-dirty {
+    border-color: #FA787E;
+}
+
+/* ny input that has been edited by the user (dirty) and is valid */
+.ng-valid.ng-dirty {
+    border-color: #78FA89;
+}
