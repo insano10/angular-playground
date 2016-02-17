@@ -61,73 +61,17 @@
 
                         </div>
                     </div>
+
                     <div class="panel" ng-show="panelCtrl.isSelected(2)">
                         Favourite Food
                     </div>
-                    <div class="panel" ng-show="panelCtrl.isSelected(3)">
 
-                        <br/>
-                        <form class="form-horizontal" name="diaryForm"
-                              ng-controller="FoodDiaryController as diaryCtrl"
-                              ng-submit="diaryForm.$valid && diaryCtrl.addEntry(person)" novalidate>
-
-                            Preview diary entry:
-                            <blockquote>
-                                Food: {{diaryCtrl.newEntry.portionSize}} {{diaryCtrl.newEntry.food}}<br/>
-                                Comment: {{diaryCtrl.newEntry.comment}}<br/>
-                                And I feel {{diaryCtrl.newEntry.feeling}}
-                            </blockquote>
-
-                            <fieldset class="form-group">
-                                <label for="diaryFoodInput" class="col-xs-3 control-label">Food:</label>
-                                <div class="col-xs-6">
-                                    <input type="text" class="form-control" id="diaryFoodInput"  ng-model="diaryCtrl.newEntry.food"
-                                           placeholder="Enter food eaten..." required/>
-                                </div>
-                            </fieldset>
-                            <fieldset class="form-group">
-                                <label class="col-xs-3 control-label">Size:</label>
-                                <div class="col-xs-6">
-                                    <input type="radio" ng-model="diaryCtrl.newEntry.portionSize" value="Small" required/>Small
-                                    <input type="radio" ng-model="diaryCtrl.newEntry.portionSize" value="Medium"/>Medium
-                                    <input type="radio" ng-model="diaryCtrl.newEntry.portionSize" value="Large"/>Large
-                                </div>
-                            </fieldset>
-                            <fieldset class="form-group">
-                                <label for="diaryCommentInput" class="col-xs-3 control-label">Comment:</label>
-                                <div class="col-xs-6">
-                                    <input type="text" class="form-control" id="diaryCommentInput" ng-model="diaryCtrl.newEntry.comment"
-                                           placeholder="Enter comments..." required/>
-                                </div>
-                            </fieldset>
-                            <fieldset class="form-group">
-                                <label for="diaryFeelingInput" class="col-xs-3 control-label">How are you feeling:</label>
-                                <div class="col-xs-6">
-                                    <!-- Note: it seems you need an ng-model if you want to use ng-options -->
-                                    <select id="diaryFeelingInput" ng-model="diaryCtrl.newEntry.feeling" ng-options="feeling for feeling in panelCtrl.feelings"></select>
-                                </div>
-                            </fieldset>
-                            <input type="submit" value="Submit"/>
-                        </form>
-
-                        <!-- show the latest 3 entries ordered by time descending -->
-                        <div class="container" ng-repeat="entry in person.diary | orderBy:'-time' | limitTo:'3'">
-                            <hr/>
-                            <div class="row">
-                                <div class="col-xs-2">Time:</div>
-                                <div class="col-xs-10">{{entry.time | date:'dd/MM/yyyy HH:mm:ss'}}</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-2">Food:</div>
-                                <div class="col-xs-10">{{entry.name}}</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-2">Comment:</div>
-                                <div class="col-xs-10">{{entry.comment}} --[{{entry.feeling}}]</div>
-                            </div>
-                            <hr/>
-                        </div>
+                    <!-- use ng-include to include other html files -->
+                    <div class="panel"
+                         ng-show="panelCtrl.isSelected(3)"
+                         ng-include="'foodDiaryPanel.html'">
                     </div>
+
                 </section>
 
             </div>
