@@ -15,98 +15,116 @@
         this.lastSavedAt = new Date().getTime();
     });
 
-    app.controller("PanelController", function($scope) {
+    app.controller("PanelController", function ($scope)
+    {
 
         this.tab = 1;
         this.feelings = ["happy", "sad", "excited"];
 
-        this.selectTab = function(setTab){
+        this.selectTab = function (setTab)
+        {
             this.tab = setTab;
         };
 
-        this.isSelected = function(checkTab){
-          return this.tab === checkTab;
+        this.isSelected = function (checkTab)
+        {
+            return this.tab === checkTab;
         };
     });
 
-    app.controller("FoodDiaryController", function(){
+    app.controller("FoodDiaryController", function ()
+    {
 
         this.newEntry = {
-            feeling: "happy"
+            food:        "",
+            portionSize: "Medium",
+            comment:     "",
+            feeling:     "happy"
+        };
+
+        this.addEntry = function (person)
+        {
+
+            person.diary.push({
+                                  name:        this.newEntry.food,
+                                  time:        new Date().getTime(),
+                                  portionSize: this.newEntry.portionSize,
+                                  comment:     this.newEntry.comment
+                              });
         };
     });
 
     var aBunchOfPeople = [
         {
-            name:       "Mr Bob",
-            age:        35,
-            motto:      "When the world gives you lemons, throw them at people",
-            isHungry:   false,
-            img: {
-                full: "resources/images/grumpy_man.jpg",
+            name:     "Mr Bob",
+            age:      35,
+            motto:    "When the world gives you lemons, throw them at people",
+            isHungry: false,
+            img:      {
+                full:  "resources/images/grumpy_man.jpg",
                 thumb: "resources/images/grumpy_man_thumb.jpg"
             },
-            diary: [
+            diary:    [
                 {
-                    name: "lemon",
-                    time: 10000,
+                    name:        "lemon",
+                    time:        10000,
                     portionSize: 'Small',
-                    comment: "**screws up face**"
+                    comment:     "**screws up face**"
                 },
                 {
-                    name: "lemon",
-                    time: 20000,
+                    name:        "lemon",
+                    time:        20000,
                     portionSize: 'Small',
-                    comment: "**screws up face**"
+                    comment:     "**screws up face**"
                 },
                 {
-                    name: "lemon",
-                    time: 30000,
+                    name:        "lemon",
+                    time:        30000,
                     portionSize: 'Small',
-                    comment: "**screws up face**"
+                    comment:     "**screws up face**"
                 },
                 {
-                    name: "lemon",
-                    time: 40000,
+                    name:        "lemon",
+                    time:        40000,
                     portionSize: 'Medium',
-                    comment: "**throws lemon at person**"
+                    comment:     "**throws lemon at person**"
                 }
             ]
         },
         {
-            name:       "Mrs Jones",
-            age:        57,
-            motto:      "You can never have enough cats",
-            isHungry:   true,
-            img: {
-                full: "resources/images/cat_lady.png",
+            name:     "Mrs Jones",
+            age:      57,
+            motto:    "You can never have enough cats",
+            isHungry: true,
+            img:      {
+                full:  "resources/images/cat_lady.png",
                 thumb: "resources/images/cat_lady_thumb.png"
             },
-            diary: [
+            diary:    [
                 {
-                    name: "carrots and hummus",
-                    time: 10000,
+                    name:        "carrots and hummus",
+                    time:        10000,
                     portionSize: 'Small',
-                    comment: "Oh no thank you, Tiddles simply hates hummus"
+                    comment:     "Oh no thank you, Tiddles simply hates hummus"
                 },
                 {
-                    name: "mackerel",
-                    time: 20000,
+                    name:        "mackerel",
+                    time:        20000,
                     portionSize: 'Large',
-                    comment: "om nom nom"
+                    comment:     "om nom nom"
                 }
             ]
         },
         {
-            name:       "Miss Kitty",
-            age:        22,
-            motto:      "If you get in my way, I will destroy you",
-            isHungry:   false,
-            img: {
-                full: "resources/images/daria.jpg",
+            name:     "Miss Kitty",
+            age:      22,
+            motto:    "If you get in my way, I will destroy you",
+            isHungry: false,
+            img:      {
+                full:  "resources/images/daria.jpg",
                 thumb: "resources/images/daria_thumb.jpg"
             },
-            diary: []
+            diary:    []
         }
     ]
 })();

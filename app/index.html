@@ -66,7 +66,10 @@
                     <div class="panel" ng-show="panelCtrl.isSelected(3)">
 
                         <br/>
-                        <form class="form-horizontal" name="diaryForm" ng-controller="FoodDiaryController as diaryCtrl">
+                        <form class="form-horizontal" name="diaryForm"
+                              ng-controller="FoodDiaryController as diaryCtrl"
+                              ng-submit="diaryCtrl.addEntry(user)">
+
                             Preview diary entry:
                             <blockquote>
                                 Food: {{diaryCtrl.newEntry.portionSize}} {{diaryCtrl.newEntry.food}}<br/>
@@ -107,7 +110,7 @@
                         </form>
 
                         <!-- show the latest 3 entries ordered by time descending -->
-                        <div class="container" ng-repeat="entry in user.diaryCtrl | orderBy:'-time' | limitTo:'3'">
+                        <div class="container" ng-repeat="entry in user.diary | orderBy:'-time' | limitTo:'3'">
                             <hr/>
                             <div class="row">
                                 <div class="col-xs-2">Time:</div>
