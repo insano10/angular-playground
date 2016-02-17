@@ -57,6 +57,15 @@
         };
     });
 
+    // define a custom directive that translates to <player-status> in html
+    app.directive("playerStatus", function() {
+
+        return {
+            restrict: 'E', //this directive works on elements (A for attributes)
+            templateUrl: 'player-status.html' //url of the html template
+        };
+    });
+
     var aBunchOfPeople = [
         {
             name:     "Mr Bob",

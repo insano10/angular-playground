@@ -19,10 +19,7 @@
         <!-- Scope of the controller is only within the div -->
         <div class="container-fluid" ng-controller="PersonController as personCtrl">
 
-            <div>
-                Last saved at: {{personCtrl.lastSavedAt | date:'dd/MM/yyyy HH:mm:ss'}}<br/>
-                Money remaining: {{personCtrl.wallet | currency}}
-            </div>
+            <player-status></player-status>
             <br/>
 
             <!-- this div will repeat for each element in the array -->
@@ -69,7 +66,7 @@
                     <!-- use ng-include to include other html files -->
                     <div class="panel"
                          ng-show="panelCtrl.isSelected(3)"
-                         ng-include="'foodDiaryPanel.html'">
+                         ng-include="'food-diary-panel.html'">
                     </div>
 
                 </section>
