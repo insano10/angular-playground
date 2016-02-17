@@ -43,7 +43,7 @@
 
         return {
             restrict:     'E', //this directive works on elements (A for attributes)
-            templateUrl:  'player-status.html', //url of the html template
+            templateUrl:  '../player-status.html', //url of the html template
             controller:   function ()
                           {            //define a controller scoped within this directive
                               this.wallet = 1000000;
@@ -56,9 +56,9 @@
     app.directive("personView", function ()
     {
         return {
-            restrict:     'E',
-            templateUrl:  'person-view.html',
-            controller:   function ()
+            restrict:    'E',
+            templateUrl: '../person-view.html',
+            controller:  function ()
                           {
                               this.tab = 1;
                               this.feelings = ["happy", "sad", "excited"];
