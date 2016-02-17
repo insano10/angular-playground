@@ -31,7 +31,9 @@
 
     app.controller("FoodDiaryController", function(){
 
-        this.newEntry = {};
+        this.newEntry = {
+            feeling: "happy"
+        };
     });
 
     var aBunchOfPeople = [
