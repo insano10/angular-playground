@@ -12,7 +12,7 @@
         //create a field inside the controller referencing the users array
         this.people = aBunchOfPeople;
         this.wallet = 1000000;
-        this.lastSavedAt = new Date().getTime();
+        this.lastSavedAt = Date.now();
     });
 
     app.controller("PanelController", function ($scope)
@@ -44,7 +44,7 @@
 
             person.diary.push({
                                   name:        this.newEntry.food,
-                                  time:        new Date().getTime(),
+                                  time:        Date.now(),
                                   portionSize: this.newEntry.portionSize,
                                   comment:     this.newEntry.comment,
                                   feeling:     this.newEntry.feeling
