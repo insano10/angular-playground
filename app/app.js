@@ -37,7 +37,7 @@
 
         this.newEntry = {
             food:        "",
-            portionSize: "Medium",
+            portionSize: "",
             comment:     "",
             feeling:     "happy"
         };
@@ -49,7 +49,8 @@
                                   name:        this.newEntry.food,
                                   time:        new Date().getTime(),
                                   portionSize: this.newEntry.portionSize,
-                                  comment:     this.newEntry.comment
+                                  comment:     this.newEntry.comment,
+                                  feeling:     this.newEntry.feeling
                               });
         };
     });
@@ -69,25 +70,29 @@
                     name:        "lemon",
                     time:        10000,
                     portionSize: 'Small',
-                    comment:     "**screws up face**"
+                    comment:     "**screws up face**",
+                    feeling:     "sad"
                 },
                 {
                     name:        "lemon",
                     time:        20000,
                     portionSize: 'Small',
-                    comment:     "**screws up face**"
+                    comment:     "**screws up face**",
+                    feeling:     "sad"
                 },
                 {
                     name:        "lemon",
                     time:        30000,
                     portionSize: 'Small',
-                    comment:     "**screws up face**"
+                    comment:     "**screws up face**",
+                    feeling:     "sad"
                 },
                 {
                     name:        "lemon",
                     time:        40000,
                     portionSize: 'Medium',
-                    comment:     "**throws lemon at person**"
+                    comment:     "**throws lemon at person**",
+                    feeling:     "excited"
                 }
             ]
         },
@@ -105,13 +110,15 @@
                     name:        "carrots and hummus",
                     time:        10000,
                     portionSize: 'Small',
-                    comment:     "Oh no thank you, Tiddles simply hates hummus"
+                    comment:     "Oh no thank you, Tiddles simply hates hummus",
+                    feeling:     "sad"
                 },
                 {
                     name:        "mackerel",
                     time:        20000,
                     portionSize: 'Large',
-                    comment:     "om nom nom"
+                    comment:     "om nom nom",
+                    feeling:     "happy"
                 }
             ]
         },

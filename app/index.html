@@ -25,7 +25,7 @@
             <br/>
 
             <!-- this div will repeat for each element in the array -->
-            <div ng-repeat="user in personCtrl.people | orderBy:'age'">
+            <div ng-repeat="person in personCtrl.people | orderBy:'age'">
 
                 <section ng-controller="PanelController as panelCtrl">
                     <ul class="nav nav-pills">
@@ -48,14 +48,14 @@
                     <div class="panel" ng-show="panelCtrl.isSelected(1)">
                         <div class="row">
                             <div class="col-xs-3 col-sm-4">
-                                <img ng-src="{{user.img.thumb}}"/>
+                                <img ng-src="{{person.img.thumb}}"/>
                             </div>
                             <div class="col-xs-9 col-sm-8">
-                                <h3> {{user.name}}: {{user.age}}</h3>
-                                <div> {{user.motto}}</div>
+                                <h3> {{person.name}}: {{person.age}}</h3>
+                                <div> {{person.motto}}</div>
 
                                 <!-- this button will only display if the ng-show expression is true -->
-                                <button ng-show="user.isHungry" class="btn btn-default btn-xs">Feed Me</button>
+                                <button ng-show="person.isHungry" class="btn btn-default btn-xs">Feed Me</button>
                             </div>
 
                         </div>
@@ -68,7 +68,7 @@
                         <br/>
                         <form class="form-horizontal" name="diaryForm"
                               ng-controller="FoodDiaryController as diaryCtrl"
-                              ng-submit="diaryCtrl.addEntry(user)">
+                              ng-submit="diaryCtrl.addEntry(person)">
 
                             Preview diary entry:
                             <blockquote>
@@ -110,7 +110,7 @@
                         </form>
 
                         <!-- show the latest 3 entries ordered by time descending -->
-                        <div class="container" ng-repeat="entry in user.diary | orderBy:'-time' | limitTo:'3'">
+                        <div class="container" ng-repeat="entry in person.diary | orderBy:'-time' | limitTo:'3'">
                             <hr/>
                             <div class="row">
                                 <div class="col-xs-2">Time:</div>
@@ -122,7 +122,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-2">Comment:</div>
-                                <div class="col-xs-10">{{entry.comment}}</div>
+                                <div class="col-xs-10">{{entry.comment}} --[{{entry.feeling}}]</div>
                             </div>
                             <hr/>
                         </div>
