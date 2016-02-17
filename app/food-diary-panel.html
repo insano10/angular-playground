@@ -37,7 +37,7 @@
         <div class="col-xs-6">
             <!-- Note: it seems you need an ng-model if you want to use ng-options -->
             <select id="diaryFeelingInput" ng-model="diaryCtrl.newEntry.feeling"
-                    ng-options="feeling for feeling in panelCtrl.feelings"></select>
+                    ng-options="feeling for feeling in ::panelCtrl.feelings"></select>
         </div>
     </fieldset>
     <input type="submit" value="Submit"/>
