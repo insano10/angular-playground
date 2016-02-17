@@ -36,10 +36,7 @@
     {
 
         this.newEntry = {
-            food:        "",
-            portionSize: "",
-            comment:     "",
-            feeling:     "happy"
+            food: "", portionSize: "", comment: "", feeling: "happy"
         };
 
         this.addEntry = function (person)
@@ -52,6 +49,11 @@
                                   comment:     this.newEntry.comment,
                                   feeling:     this.newEntry.feeling
                               });
+
+            //reset the form values
+            this.newEntry = {
+                food: "", portionSize: "", comment: "", feeling: "happy"
+            };
         };
     });
 
