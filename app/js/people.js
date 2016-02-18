@@ -11,13 +11,14 @@
         ctrl.people = [];
 
         //create a field inside the controller referencing the users array
-        $http.get('./data/people.json').then(
+        $http.get('http://localhost:8080/api/person').then(
             function success(response)
             {
-                ctrl.people = response.data;
+                ctrl.people = response.data.people;
+                console.log(ctrl.people)
             }, function error(e)
             {
-                console.log("Failed to get people: " + e);
+                console.log("Failed to get people: " + JSON.stringify(e));
             });
     }]);
 
