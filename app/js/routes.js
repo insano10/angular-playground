@@ -4,11 +4,17 @@
 
         $routeProvider
             .when("/users", {
-            templateUrl: "templates/pages/users/index.html"
+                templateUrl: "templates/pages/users/index.html"
         })
             .when("/highscores", {
                 templateUrl: "templates/pages/highscores/index.html"
         })
+            .when("/", {
+                templateUrl: "templates/pages/users/index.html"
+        })
+            .otherwise({
+                redirectTo: "/"
+       })
     });
 
 })();
