@@ -6,6 +6,9 @@ scalaVersion := "2.11.7"
 
 scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 
+scalaSource in Compile := baseDirectory.value / "backend" / "src" / "main" / "scala"
+scalaSource in Test := baseDirectory.value / "backend"/ "src" / "test" / "scala"
+
 
 //Note: %% means the scala version number gets suffixed on the end of the artifact name
 //      whereas % does not do this
