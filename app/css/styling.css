@@ -7,3 +7,8 @@
 .ng-valid.ng-dirty {
     border-color: #78FA89;
 }
+
+.dynamic-content {
+    border: 1px solid red;
+    min-height: 20px;
+}
