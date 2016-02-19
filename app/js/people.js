@@ -50,7 +50,7 @@
     {
         return {
             restrict:     'E',
-            templateUrl:  'person-view.html',
+            templateUrl:  'templates/person-view.html',
             controller:   function ()
                           {
                               this.tab = 1;
