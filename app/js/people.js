@@ -15,7 +15,6 @@
             function success(response)
             {
                 ctrl.people = response.data.people;
-                console.log(ctrl.people)
             }, function error(e)
             {
                 console.log("Failed to get people: " + JSON.stringify(e));
