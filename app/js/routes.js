@@ -10,7 +10,7 @@
                 templateUrl: "templates/pages/highscores/index.html"
         })
             .when("/", {
-                templateUrl: "templates/pages/users/index.html"
+                redirectTo: '/users'
         })
             .otherwise({
                 redirectTo: "/"
