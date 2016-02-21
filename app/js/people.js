@@ -89,6 +89,14 @@
             controllerAs: 'panelCtrl',
             scope: {
                 person: "=" // = means 2-way binding of a property (@ = text bind, & = 1-way bind)
+            },
+            link: function(scope, element, attrs){
+
+                console.log(scope.person.motto);
+                if(scope.person.motto.indexOf("destroy") >= 0)
+                {
+                    element.find("#person-motto").addClass("warning-text");
+                }
             }
         };
     });
