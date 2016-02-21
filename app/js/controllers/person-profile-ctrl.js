@@ -2,14 +2,14 @@
 {
     var mod = angular.module("people");
 
-    mod.controller("PersonProfileController", ['$http', '$routeParams', function ($http, $routeParams)
+    mod.controller("PersonProfileController", ['$routeParams', 'Person', function ($routeParams, Person) //note we do not prefix it with $, this is for angular services only
     {
 
         var ctrl = this;
         ctrl.profile = {};
         ctrl.errors = {};
 
-        $http.get('http://localhost:8080/api/person/' + $routeParams.id).then(
+        Person.get($routeParams.id).then(
             function success(response)
             {
                 ctrl.profile = response.data;

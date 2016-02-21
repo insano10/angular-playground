@@ -28,7 +28,6 @@
             },
             link: function(scope, element, attrs){
 
-                console.log(scope.person.motto);
                 if(scope.person.motto.indexOf("destroy") >= 0)
                 {
                     element.find("#person-motto").addClass("warning-text");
