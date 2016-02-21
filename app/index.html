@@ -10,10 +10,20 @@
         <script src="js/lib/bootstrap-3.3.6.js"></script>
         <script src="js/lib/angular-1.5.0-rc.2.js"></script>
         <script src="js/lib/angular-route-1.5.0-rc.2.js"></script>
+
         <script src="js/app.js"></script>
         <script src="js/routes.js"></script>
-        <script src="js/people.js"></script>
-        <script src="js/player.js"></script>
+
+        <!-- todo: need some dependency management foo here as this will get unwieldy very quickly-->
+        <!-- Controllers -->
+        <script src="js/controllers/person-ctrl.js"></script>
+        <script src="js/controllers/person-profile-ctrl.js"></script>
+        <script src="js/controllers/food-diary-ctrl.js"></script>
+
+        <!-- Directives -->
+        <script src="js/directives/person-view.js"></script>
+        <script src="js/directives/player-status.js"></script>
+
     </head>
 
     <body>

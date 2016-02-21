@@ -1,6 +1,6 @@
 (function() {
 
-    var mod = angular.module("player", []);
+    var mod = angular.module("player");
 
     // define a custom directive that translates to <player-status> in html
     mod.directive("playerStatus", function ()
