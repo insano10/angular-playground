@@ -1,6 +1,6 @@
 (function(){
 
-    angular.module("myApp").config(function($routeProvider){
+    angular.module("myApp").config(["$routeProvider", function($routeProvider){
 
         $routeProvider
             .when("/people", {
@@ -22,6 +22,6 @@
             .otherwise({
                 redirectTo: "/"
        })
-    });
+    }]);
 
 })();
