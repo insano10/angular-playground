@@ -21,10 +21,12 @@
             });
     }]);
 
-    mod.controller("PersonProfileController", function($http, $routeParams) {
+    mod.controller("PersonProfileController", function ($http, $routeParams)
+    {
 
         var ctrl = this;
         ctrl.profile = {};
+        ctrl.errors = {};
 
         $http.get('http://localhost:8080/api/person/' + $routeParams.id).then(
             function success(response)
@@ -33,7 +35,10 @@
                 console.log(ctrl.profile)
             }, function error(e)
             {
-               console.log("Failed to get profile for person [" + $routeParams.id + "]: " + JSON.stringify(e));
+                ctrl.errors = [{
+                    message: "Failed to get profile for person [" + $routeParams.id + "]",
+                    cause:   JSON.stringify(e)
+                }];
             });
     });
 

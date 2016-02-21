@@ -1,5 +1,7 @@
 <div class="container-fluid">
 
+    <p ng-if="personProfCtrl.errors" ng-repeat="error in personProfCtrl.errors">{{error.message}}: {{error.cause}}</p>
+
     <div class="row">
         <div class="col-xs-3 col-sm-4">
             <img ng-src="{{personProfCtrl.profile.img.thumb}}"/>
