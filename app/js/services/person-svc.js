@@ -2,17 +2,10 @@
 
     var mod = angular.module("people");
 
-    mod.factory("Person", ["$http", function PersonFactory($http){
+    mod.factory("Person", ["$resource", function PersonFactory($resource){
 
-        return {
+        return $resource("http://localhost:8080/api/person/:id", {}, {});
 
-            getAll: function(){
-                return $http.get('http://localhost:8080/api/person');
-            },
-            get: function(id){
-                return $http.get('http://localhost:8080/api/person/' + id);
-            }
-        }
     }]);
 
 })();

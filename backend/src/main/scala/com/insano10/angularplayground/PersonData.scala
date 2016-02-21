@@ -24,7 +24,7 @@ object PersonData {
   val kittyDiary = List[FoodDiaryEntry]()
   val kitty = new Person(id = 3, name = "Miss Kitty", age = 22, motto = "If you get in my way, I will destroy you", isHungry = false, img = kittyImage, diary = kittyDiary)
 
-  def getPeople: PeopleData = new PeopleData(List(bob, jones, kitty))
+  def getPeople: List[Person] = List(bob, jones, kitty)
 
   def getPerson(id: Long) : Person = id match {
     case 1 => bob

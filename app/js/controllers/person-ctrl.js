@@ -8,17 +8,16 @@
     {
         //code in this anonymous function gets called when the controller is executed
         var ctrl = this;
-        ctrl.people = [];
 
-        //create a field inside the controller referencing the users array
-        Person.getAll().then(
-            function success(response)
-            {
-                ctrl.people = response.data.people;
-            }, function error(e)
-            {
-                console.log("Failed to get people: " + JSON.stringify(e));
-            });
+        //call the Person service (which returns a $resource) to get all the people
+        //The call to query returns immediately with an empty object and then gets updated asynchronously
+        //when the data comes back. Due to the angular data binding, the app then gets updated
+        //The success and error callbacks are optional
+        ctrl.people = Person.query(function(value, headers){
+            console.log(JSON.stringify(value));
+        }, function(errorResponse){
+            console.log("error: " + JSON.stringify(e));
+        });
     }]);
 
 })();

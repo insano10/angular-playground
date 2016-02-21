@@ -1,7 +1,7 @@
 (function ()
 {
     //create a module called 'mod' that has dependencies on 'people' and 'player' modules
-    var mod = angular.module('myApp', ['ngRoute', 'people', 'player']);
+    var mod = angular.module('myApp', ['ngRoute', 'ngResource', 'people', 'player']);
 
     /*
     As I want to put each controller/directive in its own file I am declaring the modules here to avoid having to include the files

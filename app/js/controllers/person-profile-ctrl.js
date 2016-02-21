@@ -6,20 +6,10 @@
     {
 
         var ctrl = this;
-        ctrl.profile = {};
         ctrl.errors = {};
 
-        Person.get($routeParams.id).then(
-            function success(response)
-            {
-                ctrl.profile = response.data;
-            }, function error(e)
-            {
-                ctrl.errors = [{
-                    message: "Failed to get profile for person [" + $routeParams.id + "]",
-                    cause:   JSON.stringify(e)
-                }];
-            });
+        //call the Person service to use the $resource to get a person with the given id
+        ctrl.profile = Person.get({id: $routeParams.id});
     }]);
 
 })();
