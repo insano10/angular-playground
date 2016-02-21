@@ -20,23 +20,11 @@
 
         <h1>{{"Feed the grumpy people" | uppercase}}</h1>
 
-        <div class="dynamic-content">
-            <!-- the content of this div will change when the URL path changes to 'users' or 'highscores' -->
-            <div ng-view></div>
-        </div>
+        <player-status></player-status>
+        <br/>
 
-
-        <!-- Scope of the controller is only within the div -->
-        <div class="container-fluid" ng-controller="PersonController as personCtrl">
-
-            <player-status></player-status>
-            <br/>
-
-            <!-- this div will repeat for each element in the array -->
-            <div ng-repeat="person in personCtrl.people | orderBy:'age'">
-                <person-view></person-view>
-            </div>
-        </div>
+        <!-- the content of this div will change when the URL path changes to 'people' or 'highscores' -->
+        <div ng-view></div>
 
     </body>
 

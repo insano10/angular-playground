@@ -3,14 +3,16 @@
     angular.module("myApp").config(function($routeProvider){
 
         $routeProvider
-            .when("/users", {
-                templateUrl: "templates/pages/users/index.html"
+            .when("/people", {
+                templateUrl: "templates/pages/people/index.html",
+                controller: "PersonController",
+                controllerAs: "personCtrl"
         })
             .when("/highscores", {
                 templateUrl: "templates/pages/highscores/index.html"
         })
             .when("/", {
-                redirectTo: '/users'
+                redirectTo: '/people'
         })
             .otherwise({
                 redirectTo: "/"
