@@ -21,7 +21,7 @@
             });
     }]);
 
-    mod.controller("PersonProfileController", function ($http, $routeParams)
+    mod.controller("PersonProfileController", ['$http', '$routeParams', function ($http, $routeParams)
     {
 
         var ctrl = this;
@@ -32,7 +32,6 @@
             function success(response)
             {
                 ctrl.profile = response.data;
-                console.log(ctrl.profile)
             }, function error(e)
             {
                 ctrl.errors = [{
@@ -40,7 +39,7 @@
                     cause:   JSON.stringify(e)
                 }];
             });
-    });
+    }]);
 
     mod.controller("FoodDiaryController", function ()
     {
