@@ -35,6 +35,15 @@ trait SimpleApiRoutes extends HttpService {
             }
           }
         }
+      } ~ // tilde composes routes and requests are matches against each in turn
+      // read out path params with spray matchers. Here we are extracting 1 param of type long
+      path("person" / LongNumber) { id =>
+        respondWithHeaders(
+          HttpHeaders.`Access-Control-Allow-Origin`(AllOrigins)) {
+          complete {
+            PersonData.getPerson(id)
+          }
+        }
       }
     }
 }

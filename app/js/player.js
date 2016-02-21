@@ -8,7 +8,7 @@
 
         return {
             restrict:     'E', //this directive works on elements (A for attributes)
-            templateUrl:  'templates/player-status.html', //url of the html template
+            templateUrl:  'templates/directives/player-status.html', //url of the html template
             controller:   function ()
                           {            //define a controller scoped within this directive
                               this.wallet = 1000000;

@@ -8,6 +8,11 @@
                 controller: "PersonController",
                 controllerAs: "personCtrl"
         })
+            .when("/people/:id", {
+                templateUrl: "templates/pages/person-profile/index.html",
+                controller: "PersonProfileController",
+                controllerAs: "personProfCtrl"
+        })
             .when("/highscores", {
                 templateUrl: "templates/pages/highscores/index.html"
         })

@@ -21,6 +21,22 @@
             });
     }]);
 
+    mod.controller("PersonProfileController", function($http, $routeParams) {
+
+        var ctrl = this;
+        ctrl.profile = {};
+
+        $http.get('http://localhost:8080/api/person/' + $routeParams.id).then(
+            function success(response)
+            {
+                ctrl.profile = response.data;
+                console.log(ctrl.profile)
+            }, function error(e)
+            {
+               console.log("Failed to get profile for person [" + $routeParams.id + "]: " + JSON.stringify(e));
+            });
+    });
+
     mod.controller("FoodDiaryController", function ()
     {
 
@@ -50,7 +66,7 @@
     {
         return {
             restrict:     'E',
-            templateUrl:  'templates/person-view.html',
+            templateUrl:  'templates/directives/person-view.html',
             controller:   function ()
                           {
                               this.tab = 1;
