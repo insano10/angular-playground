@@ -86,7 +86,10 @@
                                   return this.tab === checkTab;
                               };
                           },
-            controllerAs: 'panelCtrl'
+            controllerAs: 'panelCtrl',
+            scope: {
+                person: "=" // = means 2-way binding of a property (@ = text bind, & = 1-way bind)
+            }
         };
     });
 
