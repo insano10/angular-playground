@@ -1,4 +1,7 @@
+<label for="search-people">Search: </label>
+<input id="search-people" ng-model="search.$"/> <!-- $ will match against any property inside 'search'. Use 'search.name' to only match against name -->
+
 <!-- this div will repeat for each element in the array -->
-<div ng-repeat="person in personCtrl.people | orderBy:'age'">
+<div ng-repeat="person in personCtrl.people | orderBy:'age' | filter: search"> <!-- filter out only those that match the search criteria -->
     <person-view person="person"></person-view>
 </div>
